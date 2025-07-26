@@ -75,7 +75,7 @@ jobs:
       shell: pwsh
       run: |
         $env:DOTNET_gcServer=1
-        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0
+        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -l "console;verbosity=detailed" -- NUnit.ConsoleOut=1
   ci-success:
     name: Build & Test Debug
     needs:
