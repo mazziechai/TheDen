@@ -33,8 +33,9 @@ on:
 
 jobs:
   build:
-    if: github.actor != 'PJBot' && github.event.pull_request.draft == false && github.actor != 'DeltaV-Bot' && github.actor != 'SimpleStation14'
+    if: github.actor != 'TheDen-Bot' && github.event.pull_request.draft == false
     strategy:
+      fail-fast: false  # FIXME: this is only here for debug purposes
       matrix:
         os: [ubuntu-latest]
 
